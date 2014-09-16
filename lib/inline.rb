@@ -582,6 +582,7 @@ VALUE #{method}_equals(VALUE value) {
                   (RbConfig::CONFIG['LDFLAGS']          if sane),
                   '-I', hdrdir,
                   config_hdrdir,
+                  (['-I', RbConfig::CONFIG['rubyarchhdrdir']] if RUBY_VERSION >= '2'),
                   '-I', RbConfig::CONFIG['includedir'],
                   ("-L#{RbConfig::CONFIG['libdir']}"    if sane),
                   (['-o', so_name.inspect]              if sane),
