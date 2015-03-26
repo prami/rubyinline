@@ -574,7 +574,7 @@ VALUE #{method}_equals(VALUE value) {
 
           windoze = WINDOZE and RUBY_PLATFORM =~ /mswin/
           sane = ! windoze
-          cmd = [ RbConfig::CONFIG['LDSHARED'],
+          cmd = [ 'g++ -shared',
                   flags,
                   (RbConfig::CONFIG['DLDFLAGS']         if sane),
                   (RbConfig::CONFIG['CCDLFLAGS']        if sane),
